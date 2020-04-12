@@ -24,13 +24,10 @@
   (map! :map xah-math-input-keymap
         :i "C-SPC" #'xah-math-input-change-to-symbol))
 
-
-(use-package! flyspell
-  :defer t
-  :config
-  (map! :map flyspell-mouse-map
-        [mouse-1] nil
-        [S-mouse-1] #'flyspell-correct-at-point))
+(map! :after flyspell
+      :map flyspell-mouse-map
+      [mouse-1] nil
+      [S-mouse-1] #'flyspell-correct-at-point)
 
 (use-package! latex
   :defer t
